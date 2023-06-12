@@ -169,7 +169,7 @@
 
 
         <!--Schedule trial session-->
-        <div style="height: 500px; margin-top: 150px; font-size: 28px;">
+        <div id="trialForm" style="height: 1000px; margin-top: 150px; font-size: 28px;">
             <div style="text-align: center; font-size: 38px; margin-bottom: 50px;">
                 Schedule a trial session FOR FREE!
             </div>
@@ -228,22 +228,39 @@
                 * We'll reach out to schedule your appointment! We're very flexible.
             </div>
 
-            <!--FixMe-->
-            <div style="font-size: 14px; margin-bottom: 100px;" class="d-flex justify-content-center">
-                <button type="button" class="btn btn-light">Submit</button>
-            </div>
-    
-            <!--Social media links-->
-            <div style="height: 40px; margin-bottom: 100px;">
-                Connect with us on
-
-                <br />
-
-                <a href="https://facebook.com/trainmma"><img style="height: 100%; width: 40px;" src="img/icon1.png"></a>
-                <a href="https://instagram.com/trainmma"><img style="height: 100%; width: 40px;" src="img/icon2.png"></a>
-                <a href="https://twitter.com/trainmma"><img style="height: 100%; width: 40px;" src="img/icon3.png"></a>
+            <div id="trialFormButton" style="font-size: 14px; margin-bottom: 100px;" class="d-flex justify-content-center">
+                <button type="button" class="btn btn-light" onclick="submitForm()">Submit</button>
             </div>
         </div>
+        <!--Social media links-->
+        <div style="height: 40px; margin-bottom: 100px;">
+            Connect with us on
+            <br />
+            <a href="https://facebook.com/trainmma"><img style="height: 100%; width: 40px;" src="img/icon1.png"></a>
+            <a href="https://instagram.com/trainmma"><img style="height: 100%; width: 40px;" src="img/icon2.png"></a>
+            <a href="https://twitter.com/trainmma"><img style="height: 100%; width: 40px;" src="img/icon3.png"></a>
+        </div>
     </div>
+
+    <script>
+        function submitForm() {
+            var form = document.getElementById("trialForm");
+
+            form.outerHTML = 
+            `<div style="margin-top: 200px; margin-bottom: 100px;" class="alert alert-success d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"/></svg>
+                <div style="font-size: 20px;">
+                    Success!
+                    <br>
+                    <div style="font-size: 14px;">
+                        Your request for an appointment has been submitted.
+                        Expect a response within 3-5 business days.
+                    </div>
+                </div>
+            </div>`;
+        }
+
+        window.addEventListener('onload', activateTrialForm(), false);
+    </script>
 </body>
 </html>
